@@ -1,6 +1,6 @@
 # Fresh Tomato.es - v0.1
 
-Welcome to Fresh Tomato.es! With this program you can easily generate a list of your favorite movie trailers, and add or edit your own. The code is meant to be easy to understand, and very customize able.
+Welcome to Fresh Tomato.es! With this program you can easily generate a list of your favorite movie trailers, and add or edit your own. The code is meant to be easy to understand, and very customizeable.
 
 ## Getting started
 
