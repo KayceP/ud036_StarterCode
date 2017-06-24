@@ -11,15 +11,40 @@ main_page_head = '''
     <meta charset="utf-8">
     <title>Fresh Tomato.es</title>
 
-    <!-- Bootstrap 3 -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <!-- Bootstrap 3.3.2 -->
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- Google Font Import -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+    rel="stylesheet">
+    <!-- Favicon for the browser tab  -->
     <link rel="icon" href="images/favicon.png">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="
+    https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
+    </script>
     <style type="text/css" media="screen">
         body {
-            padding-top: 80px;
+            background-color: #ffffff;
+            padding-top: 51px;
+        }
+            /* Full page image background code from: https://goo.gl/RviyvB */
+        .bg {
+            /* The image used, image is  */
+            background-image: url("images/bg.jpg");
+
+            /* Full height & Width*/
+            height: 170px;
+            width: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            line-height: 150px;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -41,7 +66,7 @@ main_page_head = '''
             padding-top: 20px;
         }
         .movie-tile:hover {
-            background-color: #EEE;
+            background-color: #60ad5e;
             cursor: pointer;
         }
         .scale-media {
@@ -55,21 +80,58 @@ main_page_head = '''
             width: 100%;
             left: 0;
             top: 0;
-            background-color: white;
+            background-color: #d50000;
         }
-    </style>
-    <script type="text/javascript" charset="utf-8">
+        h2 {
+            font-size: 30px;
+            font-family: 'Open Sans', sans-serif;
+            color: #d50000;
+
+            /* On Hover, show description. Credit: banzomaikaka on StackEx */
+
+        }
+        .img__description_layer {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(136, 162, 106, 0.6);
+            color: #ffffff;
+            visibility: hidden;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity .2s, visibility .2s;
+        }
+        .img__wrap:hover .img__description_layer {
+            visibility: visible;
+            opacity: 1;
+        }
+        .img__description {
+            transition: .2s;
+            transform: translateY(1em);
+        }
+        .img__wrap:hover .img__description {
+            transform: translateY(0);
+        }
+     </style>
+    <script type="text/javascript">
         // Pause the video when the modal is closed
-        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
-            // Remove the src so the player itself gets removed, as this is the only
+        $(document).on('click',
+         '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player gets removed, this is the only
             // reliable way to ensure the video stops playing in IE
             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
-            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+            var sourceUrl = 'http://www.youtube.com/embed/'
+            + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>",
+            {
               'id': 'trailer-video',
               'type': 'text-html',
               'src': sourceUrl,
@@ -94,8 +156,9 @@ main_page_content = '''
     <div class="modal" id="trailer">
       <div class="modal-dialog">
         <div class="modal-content">
-          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
-            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          <a href="#" class="hanging-close" data-dismiss="modal"
+          aria-hidden="true">
+            <img src="https://goo.gl/Yfnu4q" alt="Close button">
           </a>
           <div class="scale-media" id="trailer-video-container">
           </div>
@@ -105,14 +168,25 @@ main_page_content = '''
 
     <!-- Main Page Content -->
     <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-fixed-top" role="navigation"
+      style="background-color: #9b0000;">
         <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"><img src="images/favicon.png" height=16 width=16> Fresh Tomato.es Movie Trailers</a>
+          <div class="default">
+            <a class="navbar-brand" href="#">
+            <p style="font-family: 'Open Sans',
+            sans-serif; color:white; font-size: 20px;">
+            <img src="images/favicon.png" alt="Favicon for navbar"
+            height=16 width=16> Fresh Tomato.es Movie Trailers</p></a>
           </div>
         </div>
       </div>
     </div>
+
+    <div class ="container bg" style="font-family: 'Open Sans',
+    sans-serif; color:white; font-size: 50px;
+    text-align: center; vertical-align: middle;">
+    Today's Fresh Picks </div>
+
     <div class="container">
       {movie_tiles}
     </div>
@@ -123,9 +197,15 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
+<div class="col-md-6 col-lg-4 movie-tile text-center img__wrap"
+data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal"
+data-target="#trailer">
+<div class="img__description_layer">
+<p class="img__description">{movie_storyline}</p></div>
+    <img src="{poster_image_url}" alt="Poster for {movie_title}"
+    width="220" height="342">
     <h2>{movie_title}</h2>
+
 </div>
 '''
 
@@ -146,7 +226,8 @@ def create_movie_tiles_content(movies):
         content += movie_tile_content.format(
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            movie_storyline=movie.storyline
         )
     return content
 
